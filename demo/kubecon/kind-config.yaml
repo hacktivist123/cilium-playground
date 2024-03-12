@@ -1,4 +1,4 @@
-# A basic kind cluster with 2 nodes
+# A basic kind cluster with 3 nodes
 # - One control plane and two worker nodes for testing Cilium features
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
