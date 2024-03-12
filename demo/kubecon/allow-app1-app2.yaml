@@ -1,0 +1,17 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-app1-to-app2
+spec:
+  description: "Allow HTTP traffic from app1 to app2"
+  endpointSelector:
+    matchLabels:
+      app: app2
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: app1
+  - toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
