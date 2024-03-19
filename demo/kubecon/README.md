@@ -1,4 +1,4 @@
-# KubeCon demo steps for Hubble
+# Getting Started with Hubble
 
 1. create kind cluster
 
