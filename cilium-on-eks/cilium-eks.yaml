@@ -1,0 +1,18 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-cilium
+  region: eu-west-2
+  version: "1.28"
+
+managedNodeGroups:
+- name: ng-1
+  desiredCapacity: 2
+  instanceType: t3.medium
+  # taint nodes so that application pods are
+  # not scheduled/executed until Cilium is deployed.
+  taints:
+   - key: "node.cilium.io/agent-not-ready"
+     value: "true"
+     effect: "NoExecute"
